@@ -21,25 +21,28 @@ export default function Home() {
     console.log({ todos });
     console.log({ newTodos });
   };
-
+  const onClickDeleteTodo = () => {};
   return (
     <div>
-      <input value={text} onChange={(event) => setText(event.target.value)} />
-      <button onClick={onClickAddText}>追加</button>
+      <div>
+        <input value={text} onChange={(event) => setText(event.target.value)} />
+        <button onClick={onClickAddText}>追加</button>
 
-      <p>{text}</p>
-      {/* <ul>
+        <p>{text}</p>
+        {/* <ul>
         {data.map((item) => (
           <li>{item}</li>
         ))}
       </ul> */}
-      {todos.map((todo) => (
-        <div key={todo.name}>
-          <li>{todo.name}</li>
-          <li>{todo.done ? "true" : "false"}</li>
-          <br />
-        </div>
-      ))}
+      </div>
+      <div className="todobox">
+        {todos.map((todo) => (
+          <div className="todoItem" key={todo.name}>
+            <li>{todo.name}</li>
+            <button onClick={onClickDeleteTodo}>削除</button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
