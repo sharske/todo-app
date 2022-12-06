@@ -127,3 +127,8 @@
     filter: invert(1);
   }
 }
+
+.todobox {
+  border: 2px solid black;
+  padding: 2px;
+}
