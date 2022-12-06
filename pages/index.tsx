@@ -18,16 +18,17 @@ export default function Home() {
   const onClickAddText = () => {
     // const newTodos = [...todos, { name: text, done: false }];
 
-    const newTodos: Todo[] = [];
+    const newTodos: Todo[] = []; //newTodosはTodoを入れる空の配列
 
     for (const todo of todos) {
+      //このfor文はtodosの分ループする。現在のtodosにtextに入力された新しいtodoをpush(追加)する。（これがnewTodos)
       newTodos.push(todo);
     }
     newTodos.push({ name: text, done: false });
 
-    setTodos(newTodos);
-    setText("");
-    console.log({ todos });
+    setTodos(newTodos); //setTodosはTodosをnewTodosにすぐに更新するためのコマンド
+    setText(""); //入力欄を追加し終えた後に空欄にするため
+    console.log({ todos }); //todosを表示する
     console.log({ newTodos });
   };
 
@@ -37,10 +38,13 @@ export default function Home() {
   // sum(3, 10);
 
   const onClickDeleteTodo = (name: string) => {
+    // onClickDeleteTodoを定義。nameは引数　stringは型
     // setTodos(todos.filter((todo) => todo.name !== name));
 
     const newTodos: Todo[] = [];
 
+    //このfor文では、todo.nameに１つ目のループが入り（gifではabcdaa..の部分）、nameには削除したい項目が入る。
+    //todo.nameとnameが一致すると条件は進まないため、
     for (const todo of todos) {
       console.log("todo: ", todo);
       if (todo.name !== name) {
