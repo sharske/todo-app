@@ -44,7 +44,7 @@ export default function Home() {
     const newTodos: Todo[] = [];
 
     //このfor文では、todo.nameに１つ目のループが入り（gifではabcdaa..の部分）、nameには削除したい項目が入る。
-    //todo.nameとnameが一致すると条件は進まないため、
+    //todo.nameとnameが一致すると条件は進まないため、todoが追加されない。一致しなければ進むため、追加される。
     for (const todo of todos) {
       console.log("todo: ", todo);
       if (todo.name !== name) {
